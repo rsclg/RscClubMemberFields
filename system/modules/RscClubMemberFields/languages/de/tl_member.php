@@ -31,28 +31,25 @@
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_member']['xt_club_function']      = array('Funktion&#40;en&#41;', 'Geben Sie die Funktion&#40;en&#41; im Verein an.');
+$GLOBALS['TL_LANG']['tl_member']['xt_club_membernumber']             = array('Mitgliedernummer', 'Geben Sie die Mitgliedernummer an.');
+$GLOBALS['TL_LANG']['tl_member']['xt_club_function']                 = array('Funktion&#40;en&#41;', 'Geben Sie die Funktion&#40;en&#41; im Verein an.');
 $GLOBALS['TL_LANG']['tl_member']['xt_club_license_bdr_license']      = array('BDR-Lizenz', 'Geben Sie an, ob das Mitglied eine BDR-Lizenz hat.');
-$GLOBALS['TL_LANG']['tl_member']['xt_club_license_bdr_license_nr']      = array('BDR-Lizenz - Nummer', 'Geben Sie die Nummer der BDR-Lizenz an.');
-$GLOBALS['TL_LANG']['tl_member']['xt_club_license_dtu_startpass']      = array('DTU-Startpass', 'Geben Sie an, ob das Mitglied einen DTU-Startpass hat.');
-$GLOBALS['TL_LANG']['tl_member']['xt_club_license_dtu_startpass_nr']      = array('DTU-Startpass - Nummer', 'Geben Sie die Nummer des DTU-Startpass an.');
-$GLOBALS['TL_LANG']['tl_member']['xt_club_license_rtf_card']      = array('RTF-Wertungskarte', 'Geben Sie an, ob das Mitglied eine RTF-Wertungskarte hat.');
+$GLOBALS['TL_LANG']['tl_member']['xt_club_license_bdr_license_nr']   = array('BDR-Lizenz - Nummer', 'Geben Sie die Nummer der BDR-Lizenz an.');
+$GLOBALS['TL_LANG']['tl_member']['xt_club_license_dtu_startpass']    = array('DTU-Startpass', 'Geben Sie an, ob das Mitglied einen DTU-Startpass hat.');
+$GLOBALS['TL_LANG']['tl_member']['xt_club_license_dtu_startpass_nr'] = array('DTU-Startpass - Nummer', 'Geben Sie die Nummer des DTU-Startpass an.');
+$GLOBALS['TL_LANG']['tl_member']['xt_club_license_rtf_card']         = array('RTF-Wertungskarte', 'Geben Sie an, ob das Mitglied eine RTF-Wertungskarte hat.');
 $GLOBALS['TL_LANG']['tl_member']['xt_club_license_rtf_card_nr']      = array('RTF-Wertungskarte - Nummer', 'Geben Sie die Nummer der RTF-Wertungskarte an.');
-$GLOBALS['TL_LANG']['tl_member']['xt_club_membernumber']      = array('Mitgliedernummer', 'Geben Sie die Mitgliedernummer an.');
+$GLOBALS['TL_LANG']['tl_member']['xt_club_swimflat']                 = array('Schwimmpauschale', 'Geben Sie an, ob die Schwimmpauschale gebucht ist.');
 
 /**
  * Legends
  */
-$GLOBALS['TL_LANG']['tl_member']['club_legend']      = 'Vereinsdaten';
+$GLOBALS['TL_LANG']['tl_member']['club_legend'] = 'Vereinsdaten';
 
 /**
  * Combobox select values
  */
-$GLOBALS['TL_LANG']['tl_member']['xt_club_license_bdr_license_select']['Ja'] = 'Ja';
-$GLOBALS['TL_LANG']['tl_member']['xt_club_license_bdr_license_select']['Nein'] = 'Nein';
-$GLOBALS['TL_LANG']['tl_member']['xt_club_license_dtu_startpass_select']['Ja'] = 'Ja';
-$GLOBALS['TL_LANG']['tl_member']['xt_club_license_dtu_startpass_select']['Nein'] = 'Nein';
-$GLOBALS['TL_LANG']['tl_member']['xt_club_license_rtf_card_select']['Ja'] = 'Ja';
-$GLOBALS['TL_LANG']['tl_member']['xt_club_license_rtf_card_select']['Nein'] = 'Nein';
+$GLOBALS['TL_LANG']['tl_member']['xt_club_license_select']['Ja']   = 'Ja';
+$GLOBALS['TL_LANG']['tl_member']['xt_club_license_select']['Nein'] = 'Nein';
 
 ?>

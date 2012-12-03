@@ -28,7 +28,7 @@
  * @filesource
  */
 
-$clubPalette = "{club_legend},xt_club_membernumber,xt_club_function,xt_club_license_bdr_license,xt_club_license_bdr_license_nr,xt_club_license_dtu_startpass,xt_club_license_dtu_startpass_nr,xt_club_license_rtf_card,xt_club_license_rtf_card_nr;";
+$clubPalette = "{club_legend},xt_club_membernumber,xt_club_function,xt_club_license_bdr_license,xt_club_license_bdr_license_nr,xt_club_license_dtu_startpass,xt_club_license_dtu_startpass_nr,xt_club_license_rtf_card,xt_club_license_rtf_card_nr,xt_club_swimflat;";
 if (strpos($GLOBALS['TL_DCA']['tl_member']['palettes']['default'], 'language;') === false) {
 	$GLOBALS['TL_DCA']['tl_member']['palettes']['default'] .= ';' . $clubPalette;
 } else {
@@ -38,12 +38,10 @@ if (strpos($GLOBALS['TL_DCA']['tl_member']['palettes']['default'], 'language;') 
 $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_membernumber'] = array
 (
 	'label'                   => &$GLOBALS['TL_LANG']['tl_member']['xt_club_membernumber'],
-	
 	'exclude'                 => true,
 	'search'                  => true,
 	'inputType'               => 'text',
-	
-	'eval'                    => array('feEditable' => false,'feViewable' => false,'feGroup' => 'personal','tl_class' => 'w50','mandatory' => true,'rgxp' => 'digit', 'unique' => true, 'alwaysSave' => true),
+	'eval'                    => array('feEditable' => false,'feViewable' => false,'feGroup' => 'club','tl_class' => 'w50','mandatory' => true,'rgxp' => 'digit', 'unique' => true, 'alwaysSave' => true),
 	'load_callback'           => array(array('RscClubMemberFields', 'getMemberNumber'))
 );
 $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_function'] = array
@@ -52,67 +50,76 @@ $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_function'] = array
 	'exclude'                 => true,
 	'search'                  => true,
 	'inputType'               => 'text',
-	'eval'                    => array('feEditable' => false,'feViewable' => true,'feGroup' => 'personal','tl_class' => 'w50')
+	'eval'                    => array('feEditable' => false,'feViewable' => true,'feGroup' => 'club','tl_class' => 'w50')
 );
 $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_license_bdr_license'] = array
 (
 	'label'                   => &$GLOBALS['TL_LANG']['tl_member']['xt_club_license_bdr_license'],
 	'default'                 => 'Nein',	
 	'exclude'                 => true,
-	'search'                  => true,
+	'search'                  => false,
+	'filter'                  => true,
 	'inputType'               => 'select',
-	'options'                 => array('Ja' => &$GLOBALS['TL_LANG']['tl_member']['xt_club_license_bdr_license_select']['Ja'],'Nein' => &$GLOBALS['TL_LANG']['tl_member']['xt_club_license_bdr_license_select']['Nein']),	
-	'eval'                    => array('feEditable' => false,'feViewable' => true,'feGroup' => 'personal','tl_class' => 'w50','mandatory' => true)
+	'options'                 => array('Ja' => &$GLOBALS['TL_LANG']['tl_member']['xt_club_license_select']['Ja'],'Nein' => &$GLOBALS['TL_LANG']['tl_member']['xt_club_license_select']['Nein']),	
+	'eval'                    => array('feEditable' => false,'feViewable' => true,'feGroup' => 'club','tl_class' => 'w50','mandatory' => true)
 );
 $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_license_bdr_license_nr'] = array
 (
 	'label'                   => &$GLOBALS['TL_LANG']['tl_member']['xt_club_license_bdr_license_nr'],
-	
 	'exclude'                 => true,
 	'search'                  => true,
+	'filter'                  => false,
 	'inputType'               => 'text',
-	
-	'eval'                    => array('feEditable' => false,'feViewable' => true,'feGroup' => 'personal','tl_class' => 'w50')
+	'eval'                    => array('feEditable' => false,'feViewable' => true,'feGroup' => 'club','tl_class' => 'w50')
 );
 $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_license_dtu_startpass'] = array
 (
 	'label'                   => &$GLOBALS['TL_LANG']['tl_member']['xt_club_license_dtu_startpass'],
 	'default'                 => 'Nein',	
 	'exclude'                 => true,
-	'search'                  => true,
+	'search'                  => false,
+	'filter'                  => true,
 	'inputType'               => 'select',
-	'options'                 => array('Ja' => &$GLOBALS['TL_LANG']['tl_member']['xt_club_license_dtu_startpass_select']['Ja'],'Nein' => &$GLOBALS['TL_LANG']['tl_member']['xt_club_license_dtu_startpass_select']['Nein']),	
-	'eval'                    => array('feEditable' => false,'feViewable' => true,'feGroup' => 'personal','tl_class' => 'w50','mandatory' => true)
+	'options'                 => array('Ja' => &$GLOBALS['TL_LANG']['tl_member']['xt_club_license_select']['Ja'],'Nein' => &$GLOBALS['TL_LANG']['tl_member']['xt_club_license_select']['Nein']),	
+	'eval'                    => array('feEditable' => false,'feViewable' => true,'feGroup' => 'club','tl_class' => 'w50','mandatory' => true)
 );
 $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_license_dtu_startpass_nr'] = array
 (
 	'label'                   => &$GLOBALS['TL_LANG']['tl_member']['xt_club_license_dtu_startpass_nr'],
-	
 	'exclude'                 => true,
 	'search'                  => true,
+	'filter'                  => false,
 	'inputType'               => 'text',
-	
-	'eval'                    => array('feEditable' => false,'feViewable' => true,'feGroup' => 'personal','tl_class' => 'w50')
+	'eval'                    => array('feEditable' => false,'feViewable' => true,'feGroup' => 'club','tl_class' => 'w50')
 );
 $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_license_rtf_card'] = array
 (
 	'label'                   => &$GLOBALS['TL_LANG']['tl_member']['xt_club_license_rtf_card'],
 	'default'                 => 'Nein',	
 	'exclude'                 => true,
-	'search'                  => true,
+	'search'                  => false,
+	'filter'                  => true,
 	'inputType'               => 'select',
-	'options'                 => array('Ja' => &$GLOBALS['TL_LANG']['tl_member']['xt_club_license_rtf_card_select']['Ja'],'Nein' => &$GLOBALS['TL_LANG']['tl_member']['xt_club_license_rtf_card_select']['Nein']),	
-	'eval'                    => array('feEditable' => false,'feViewable' => true,'feGroup' => 'personal','tl_class' => 'w50','mandatory' => true)
+	'options'                 => array('Ja' => &$GLOBALS['TL_LANG']['tl_member']['xt_club_license_select']['Ja'],'Nein' => &$GLOBALS['TL_LANG']['tl_member']['xt_club_license_select']['Nein']),	
+	'eval'                    => array('feEditable' => false,'feViewable' => true,'feGroup' => 'club','tl_class' => 'w50','mandatory' => true)
 );
 $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_license_rtf_card_nr'] = array
 (
 	'label'                   => &$GLOBALS['TL_LANG']['tl_member']['xt_club_license_rtf_card_nr'],
-	
 	'exclude'                 => true,
 	'search'                  => true,
+	'filter'                  => false,
 	'inputType'               => 'text',
-	
-	'eval'                    => array('feEditable' => false,'feViewable' => true,'feGroup' => 'personal','tl_class' => 'w50')
+	'eval'                    => array('feEditable' => false,'feViewable' => true,'feGroup' => 'club','tl_class' => 'w50')
+);
+$GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_swimflat'] = array
+(
+	'label'                   => &$GLOBALS['TL_LANG']['tl_member']['xt_club_swimflat'],
+	'exclude'                 => true,
+	'search'                  => false,
+	'filter'                  => true,
+	'inputType'               => 'checkbox',
+	'eval'                    => array('feEditable' => false,'feViewable' => true,'feGroup' => 'club','tl_class' => 'clr w50')
 );
 
 // Default Werte in der Mitgliederverwaltung
@@ -129,9 +136,6 @@ foreach ($mandatoryFields as $fieldName) {
 
 // Anpassung Filter
 $GLOBALS['TL_DCA']['tl_member']['fields']['gender']['filter'] = true;
-$GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_license_bdr_license']['filter'] = true;
-$GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_license_dtu_startpass']['filter'] = true;
-$GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_license_rtf_card']['filter'] = true;
 $GLOBALS['TL_DCA']['tl_member']['fields']['start']['filter'] = true;
 $GLOBALS['TL_DCA']['tl_member']['fields']['start']['flag'] = 7;
 $GLOBALS['TL_DCA']['tl_member']['fields']['stop']['filter'] = true;
