@@ -1,19 +1,24 @@
+[![Latest Version on Packagist](http://img.shields.io/packagist/v/rsclg/club-member-fields.svg?style=flat)](https://packagist.org/packages/rsclg/club-member-fields)
+[![Installations via composer per month](http://img.shields.io/packagist/dm/rsclg/club-member-fields.svg?style=flat)](https://packagist.org/packages/rsclg/club-member-fields)
+[![Installations via composer total](http://img.shields.io/packagist/dt/rsclg/club-member-fields.svg?style=flat)](https://packagist.org/packages/rsclg/club-member-fields)
+
 Contao Extension: RscClubMemberFields
 =====================================
 
-Vereinsspezifische Anpassung der Contao Mitgliederverwaltung.
+Provides club specific adaptation of Contao member management:
 
-- Erweiterung von tl_member um zusätzliche Vereinsfelder
-- automtische Generierung der nächsten freien Mitgliedernummer
-- Setzen von Default Werten für neue Mitglieder
-- Anpassung von Filter, Suche und Sortierung
+- Extension of `tl_member` for additional club fields
+- Automatic generation of the next free member number
+- Set default values for new members
+- Adjustment of filter, search and sorting
 
 
 Installation
 ------------
 
-The extension is not published in contao extension repository.
-Install it manually.
+Install the extension via composer: [cliffparnitzky/birthday-lister](https://packagist.org/packages/rsclg/club-member-fields).
+
+If you prefer to install it manually, download the latest release here: https://github.com/rsclg/RscClubMemberFields/releases
 
 
 Tracker
@@ -25,5 +30,11 @@ https://github.com/rsclg/RscClubMemberFields/issues
 Compatibility
 -------------
 
-- min. version: Contao 2.9.5
-- max. version: Contao 2.9.5
+- min. Contao version: >= 3.2.0
+- max. Contao version: <  3.5.0
+
+
+Dependency
+----------
+
+- There are no dependencies to other extensions, that have to be installed.
