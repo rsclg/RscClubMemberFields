@@ -145,7 +145,7 @@ $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_social_blog'] = array
 	'search'                  => true,
 	'filter'                  => false,
 	'inputType'               => 'text',
-	'eval'                    => array('feEditable' => true, 'feViewable' => true, 'feGroup' => 'club_social', 'tl_class' => 'clr long', 'rgxp' => 'url'),
+	'eval'                    => array('feEditable' => true, 'feViewable' => true, 'feGroup' => 'club_social', 'tl_class' => 'clr long', 'rgxp'=>'url', 'decodeEntities'=>true),
 	'sql'                     => "varchar(512) NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_social_twitter'] = array
