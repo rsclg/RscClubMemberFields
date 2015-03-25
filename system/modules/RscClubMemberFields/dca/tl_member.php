@@ -32,7 +32,7 @@ $clubPalette = "{club_legend},xt_club_membernumber,xt_club_function,xt_club_swim
 						 . "{club_license_legend},xt_club_license_bdr_license,xt_club_license_bdr_license_nr,"
 						 . "xt_club_license_dtu_startpass,xt_club_license_dtu_startpass_nr,"
 						 . "xt_club_license_rtf_card,xt_club_license_rtf_card_nr;"
-						 . "{club_social_legend},xt_club_social_blog,xt_club_social_twitter,xt_club_social_facebook;";
+						 . "{club_social_legend},xt_club_social_twitter,xt_club_social_facebook;";
 
 if (strpos($GLOBALS['TL_DCA']['tl_member']['palettes']['default'], 'language;') === false) {
 	$GLOBALS['TL_DCA']['tl_member']['palettes']['default'] .= ';' . $clubPalette;
@@ -137,16 +137,6 @@ $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_license_rtf_card_nr'] = array
 	'inputType'               => 'text',
 	'eval'                    => array('feEditable' => false, 'feViewable' => true, 'feGroup' => 'club_license', 'tl_class' => 'w50'),
 	'sql'                     => "text NULL"
-);
-$GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_social_blog'] = array
-(
-	'label'                   => &$GLOBALS['TL_LANG']['tl_member']['xt_club_social_blog'],
-	'exclude'                 => true,
-	'search'                  => true,
-	'filter'                  => false,
-	'inputType'               => 'text',
-	'eval'                    => array('feEditable' => true, 'feViewable' => true, 'feGroup' => 'club_social', 'tl_class' => 'clr long', 'rgxp'=>'url', 'decodeEntities'=>true),
-	'sql'                     => "varchar(512) NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_social_twitter'] = array
 (
