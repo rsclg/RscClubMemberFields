@@ -165,7 +165,7 @@ $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_social_facebook'] = array
 	'search'                  => true,
 	'filter'                  => false,
 	'inputType'               => 'text',
-	'eval'                    => array('feEditable' => true, 'feViewable' => true, 'feGroup' => 'club_social', 'tl_class' => 'clr w50', 'spaceToUnderscore' => true),
+	'eval'                    => array('feEditable' => true, 'feViewable' => true, 'feGroup' => 'club_social', 'tl_class' => 'w50', 'spaceToUnderscore' => true),
 	'sql'                     => "varchar(255) NOT NULL default ''"
 );
 
