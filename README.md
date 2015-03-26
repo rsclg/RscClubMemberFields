@@ -16,7 +16,7 @@ Provides club specific adaptation of Contao member management:
 Installation
 ------------
 
-Install the extension via composer: [cliffparnitzky/birthday-lister](https://packagist.org/packages/rsclg/club-member-fields).
+Install the extension via composer: [rsclg/club-member-fields](https://packagist.org/packages/rsclg/club-member-fields).
 
 If you prefer to install it manually, download the latest release here: https://github.com/rsclg/RscClubMemberFields/releases
 
