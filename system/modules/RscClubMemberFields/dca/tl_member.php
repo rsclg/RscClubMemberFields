@@ -28,7 +28,11 @@
  * @filesource
  */
 
-$clubPalette = "{club_legend},xt_club_membernumber,xt_club_function,xt_club_swimflat;"
+$GLOBALS['TL_DCA']['tl_member']['palettes']['__selector__'][] = 'xt_club_member';
+
+$GLOBALS['TL_DCA']['tl_member']['subpalettes']['xt_club_member'] = "xt_club_membernumber,xt_club_function,xt_club_swimflat";
+
+$clubPalette = "{club_legend},xt_club_member;"
 						 . "{club_license_legend},xt_club_license_bdr_license,xt_club_license_bdr_license_nr,"
 						 . "xt_club_license_dtu_startpass,xt_club_license_dtu_startpass_nr,"
 						 . "xt_club_license_rtf_card,xt_club_license_rtf_card_nr;"
@@ -40,6 +44,17 @@ if (strpos($GLOBALS['TL_DCA']['tl_member']['palettes']['default'], 'language;') 
 	$GLOBALS['TL_DCA']['tl_member']['palettes']['default'] = str_replace('language;', 'language;' . $clubPalette, $GLOBALS['TL_DCA']['tl_member']['palettes']['default']);
 }
 
+$GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_member'] = array
+(
+	'label'                   => &$GLOBALS['TL_LANG']['tl_member']['xt_club_member'],
+	'exclude'                 => true,
+	'search'                  => false,
+	'filter'                  => true,
+	'default'                 => true,
+	'inputType'               => 'checkbox',
+	'eval'                    => array('tl_class' => 'clr w50', 'submitOnChange'=>true),
+	'sql'                     => "char(1) NOT NULL default '1'"
+);
 $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_membernumber'] = array
 (
 	'label'                   => &$GLOBALS['TL_LANG']['tl_member']['xt_club_membernumber'],
