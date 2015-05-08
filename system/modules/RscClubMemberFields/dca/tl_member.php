@@ -181,8 +181,8 @@ $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_sporting_success'] = array
 	'search'                  => true,
 	'filter'                  => false,
 	'inputType'               => 'text',
-	'eval'                    => array('feEditable' => true, 'feViewable' => true, 'feGroup' => 'club_question', 'tl_class' => 'clr long', 'maxlength' => 255),
-	'sql'                     => "varchar(255) NOT NULL default ''"
+	'eval'                    => array('feEditable' => true, 'feViewable' => true, 'feGroup' => 'club_question', 'tl_class' => 'clr long', 'maxlength' => 100),
+	'sql'                     => "varchar(100) NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_sporting_goals'] = array
 (
@@ -191,8 +191,8 @@ $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_sporting_goals'] = array
 	'search'                  => true,
 	'filter'                  => false,
 	'inputType'               => 'text',
-	'eval'                    => array('feEditable' => true, 'feViewable' => true, 'feGroup' => 'club_question', 'tl_class' => 'clr long', 'maxlength' => 255),
-	'sql'                     => "varchar(255) NOT NULL default ''"
+	'eval'                    => array('feEditable' => true, 'feViewable' => true, 'feGroup' => 'club_question', 'tl_class' => 'clr long', 'maxlength' => 100),
+	'sql'                     => "varchar(100) NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_sporting_motivation'] = array
 (
@@ -201,8 +201,8 @@ $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_sporting_motivation'] = array
 	'search'                  => true,
 	'filter'                  => false,
 	'inputType'               => 'text',
-	'eval'                    => array('feEditable' => true, 'feViewable' => true, 'feGroup' => 'club_question', 'tl_class' => 'clr long', 'maxlength' => 255),
-	'sql'                     => "varchar(255) NOT NULL default ''"
+	'eval'                    => array('feEditable' => true, 'feViewable' => true, 'feGroup' => 'club_question', 'tl_class' => 'clr long', 'maxlength' => 100),
+	'sql'                     => "varchar(100) NOT NULL default ''"
 );
 
 // Default Werte in der Mitgliederverwaltung
