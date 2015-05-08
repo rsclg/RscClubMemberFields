@@ -43,13 +43,17 @@ $GLOBALS['TL_LANG']['tl_member']['xt_club_license_rtf_card']         = array('RT
 $GLOBALS['TL_LANG']['tl_member']['xt_club_license_rtf_card_nr']      = array('RTF-Wertungskarte - Nummer', 'Geben Sie die Nummer der RTF-Wertungskarte an.');
 $GLOBALS['TL_LANG']['tl_member']['xt_club_social_twitter']           = array('Twitter Account', 'Geben Sie den Twitter Account an.');
 $GLOBALS['TL_LANG']['tl_member']['xt_club_social_facebook']          = array('Facebook Account', 'Geben Sie den Facebook Account an.');
+$GLOBALS['TL_LANG']['tl_member']['xt_club_sporting_success']         = array('Sportliche Erfolge', 'Geben Sie die sportlichen Erfolge an.');
+$GLOBALS['TL_LANG']['tl_member']['xt_club_sporting_goals']           = array('Sportliche Ziele', 'Geben Sie die sportlichen Ziele an.');
+$GLOBALS['TL_LANG']['tl_member']['xt_club_sporting_motivation']      = array('Sportliche Motivation', 'Geben Sie die sportliche Motivation an.');
 
 /**
  * Legends
  */
-$GLOBALS['TL_LANG']['tl_member']['club_legend']         = 'Vereinsdaten';
-$GLOBALS['TL_LANG']['tl_member']['club_license_legend'] = 'Lizenzdaten';
-$GLOBALS['TL_LANG']['tl_member']['club_social_legend']  = 'Social Media Daten';
+$GLOBALS['TL_LANG']['tl_member']['club_legend']          = 'Vereinsdaten';
+$GLOBALS['TL_LANG']['tl_member']['club_license_legend']  = 'Lizenzdaten';
+$GLOBALS['TL_LANG']['tl_member']['club_social_legend']   = 'Social Media Daten';
+$GLOBALS['TL_LANG']['tl_member']['club_sporting_legend'] = 'Sportliche Fakten';
 
 /**
  * Combobox select values

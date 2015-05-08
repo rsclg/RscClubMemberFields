@@ -36,7 +36,8 @@ $clubPalette = "{club_legend},xt_club_member;"
 						 . "{club_license_legend},xt_club_license_bdr_license,xt_club_license_bdr_license_nr,"
 						 . "xt_club_license_dtu_startpass,xt_club_license_dtu_startpass_nr,"
 						 . "xt_club_license_rtf_card,xt_club_license_rtf_card_nr;"
-						 . "{club_social_legend},xt_club_social_twitter,xt_club_social_facebook;";
+						 . "{club_social_legend},xt_club_social_twitter,xt_club_social_facebook;"
+						 . "{club_sporting_legend},xt_club_sporting_success,xt_club_sporting_goals,xt_club_sporting_motivation;,";
 
 if (strpos($GLOBALS['TL_DCA']['tl_member']['palettes']['default'], 'language;') === false) {
 	$GLOBALS['TL_DCA']['tl_member']['palettes']['default'] .= ';' . $clubPalette;
@@ -71,8 +72,8 @@ $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_function'] = array
 	'exclude'                 => true,
 	'search'                  => true,
 	'inputType'               => 'text',
-	'eval'                    => array('feEditable' => false, 'feViewable' => true, 'feGroup' => 'club', 'tl_class' => 'clr long'),
-	'sql'                     => "text NULL"
+	'eval'                    => array('feEditable' => false, 'feViewable' => true, 'feGroup' => 'club', 'tl_class' => 'clr long', 'maxlength' => 255),
+	'sql'                     => "varchar(255) NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_swimflat'] = array
 (
@@ -95,7 +96,7 @@ $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_license_bdr_license'] = array
 	'options'                 => array('Ja', 'Nein'),
 	'reference'               => &$GLOBALS['TL_LANG']['tl_member']['xt_club_license_select'],
 	'eval'                    => array('feEditable' => false, 'feViewable' => true, 'feGroup' => 'club_license', 'tl_class' => 'clr w50'),
-	'sql'                     => "varchar(255) NOT NULL default 'Nein'"
+	'sql'                     => "varchar(16) NOT NULL default 'Nein'"
 );
 $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_license_bdr_license_nr'] = array
 (
@@ -104,8 +105,8 @@ $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_license_bdr_license_nr'] = ar
 	'search'                  => true,
 	'filter'                  => false,
 	'inputType'               => 'text',
-	'eval'                    => array('feEditable' => false, 'feViewable' => true, 'feGroup' => 'club_license', 'tl_class' => 'w50'),
-	'sql'                     => "text NULL"
+	'eval'                    => array('feEditable' => false, 'feViewable' => true, 'feGroup' => 'club_license', 'tl_class' => 'w50', 'maxlength' => 255),
+	'sql'                     => "varchar(255) NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_license_dtu_startpass'] = array
 (
@@ -118,7 +119,7 @@ $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_license_dtu_startpass'] = arr
 	'options'                 => array('Ja', 'Nein'),
 	'reference'               => &$GLOBALS['TL_LANG']['tl_member']['xt_club_license_select'],
 	'eval'                    => array('feEditable' => false, 'feViewable' => true, 'feGroup' => 'club_license', 'tl_class' => 'clr w50'),
-	'sql'                     => "varchar(255) NOT NULL default 'Nein'"
+	'sql'                     => "varchar(16) NOT NULL default 'Nein'"
 );
 $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_license_dtu_startpass_nr'] = array
 (
@@ -127,8 +128,8 @@ $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_license_dtu_startpass_nr'] = 
 	'search'                  => true,
 	'filter'                  => false,
 	'inputType'               => 'text',
-	'eval'                    => array('feEditable' => false, 'feViewable' => true, 'feGroup' => 'club_license', 'tl_class' => 'w50'),
-	'sql'                     => "text NULL"
+	'eval'                    => array('feEditable' => false, 'feViewable' => true, 'feGroup' => 'club_license', 'tl_class' => 'w50', 'maxlength' => 255),
+	'sql'                     => "varchar(255) NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_license_rtf_card'] = array
 (
@@ -141,7 +142,7 @@ $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_license_rtf_card'] = array
 	'options'                 => array('Ja', 'Nein'),
 	'reference'               => &$GLOBALS['TL_LANG']['tl_member']['xt_club_license_select'],
 	'eval'                    => array('feEditable' => false, 'feViewable' => true, 'feGroup' => 'club_license', 'tl_class' => 'clr w50', 'mandatory' => true),
-	'sql'                     => "varchar(255) NOT NULL default 'Nein'"
+	'sql'                     => "varchar(16) NOT NULL default 'Nein'"
 );
 $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_license_rtf_card_nr'] = array
 (
@@ -150,8 +151,8 @@ $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_license_rtf_card_nr'] = array
 	'search'                  => true,
 	'filter'                  => false,
 	'inputType'               => 'text',
-	'eval'                    => array('feEditable' => false, 'feViewable' => true, 'feGroup' => 'club_license', 'tl_class' => 'w50'),
-	'sql'                     => "text NULL"
+	'eval'                    => array('feEditable' => false, 'feViewable' => true, 'feGroup' => 'club_license', 'tl_class' => 'w50', 'maxlength' => 255),
+	'sql'                     => "varchar(255) NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_social_twitter'] = array
 (
@@ -160,7 +161,7 @@ $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_social_twitter'] = array
 	'search'                  => true,
 	'filter'                  => false,
 	'inputType'               => 'text',
-	'eval'                    => array('feEditable' => true, 'feViewable' => true, 'feGroup' => 'club_social', 'tl_class' => 'clr w50', 'spaceToUnderscore' => true),
+	'eval'                    => array('feEditable' => true, 'feViewable' => true, 'feGroup' => 'club_social', 'tl_class' => 'clr w50', 'spaceToUnderscore' => true, 'maxlength' => 255),
 	'sql'                     => "varchar(255) NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_social_facebook'] = array
@@ -170,7 +171,37 @@ $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_social_facebook'] = array
 	'search'                  => true,
 	'filter'                  => false,
 	'inputType'               => 'text',
-	'eval'                    => array('feEditable' => true, 'feViewable' => true, 'feGroup' => 'club_social', 'tl_class' => 'w50', 'spaceToUnderscore' => true),
+	'eval'                    => array('feEditable' => true, 'feViewable' => true, 'feGroup' => 'club_social', 'tl_class' => 'w50', 'spaceToUnderscore' => true, 'maxlength' => 255),
+	'sql'                     => "varchar(255) NOT NULL default ''"
+);
+$GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_sporting_success'] = array
+(
+	'label'                   => &$GLOBALS['TL_LANG']['tl_member']['xt_club_sporting_success'],
+	'exclude'                 => true,
+	'search'                  => true,
+	'filter'                  => false,
+	'inputType'               => 'text',
+	'eval'                    => array('feEditable' => true, 'feViewable' => true, 'feGroup' => 'club_question', 'tl_class' => 'clr long', 'maxlength' => 255),
+	'sql'                     => "varchar(255) NOT NULL default ''"
+);
+$GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_sporting_goals'] = array
+(
+	'label'                   => &$GLOBALS['TL_LANG']['tl_member']['xt_club_sporting_goals'],
+	'exclude'                 => true,
+	'search'                  => true,
+	'filter'                  => false,
+	'inputType'               => 'text',
+	'eval'                    => array('feEditable' => true, 'feViewable' => true, 'feGroup' => 'club_question', 'tl_class' => 'clr long', 'maxlength' => 255),
+	'sql'                     => "varchar(255) NOT NULL default ''"
+);
+$GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_sporting_motivation'] = array
+(
+	'label'                   => &$GLOBALS['TL_LANG']['tl_member']['xt_club_sporting_motivation'],
+	'exclude'                 => true,
+	'search'                  => true,
+	'filter'                  => false,
+	'inputType'               => 'text',
+	'eval'                    => array('feEditable' => true, 'feViewable' => true, 'feGroup' => 'club_question', 'tl_class' => 'clr long', 'maxlength' => 255),
 	'sql'                     => "varchar(255) NOT NULL default ''"
 );
 
