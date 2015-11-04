@@ -32,7 +32,7 @@
  * Fields
  */
 $GLOBALS['TL_LANG']['tl_member']['xt_club_member']                   = array('Vereinsmitglied', 'Geben Sie an ob es sich um ein Vereinsmitglied handelt.');
-$GLOBALS['TL_LANG']['tl_member']['xt_club_membernumber']             = array('Mitgliedernummer', 'Geben Sie die Mitgliedernummer an.');
+$GLOBALS['TL_LANG']['tl_member']['xt_club_membernumber']             = array('Mitglieds-Nr.', 'Geben Sie die Mitgliedsnummer an.');
 $GLOBALS['TL_LANG']['tl_member']['xt_club_function']                 = array('Funktion(en)', 'Geben Sie die Funktion(en) im Verein an.');
 $GLOBALS['TL_LANG']['tl_member']['xt_club_swimflat']                 = array('Schwimmpauschale', 'Geben Sie an, ob die Schwimmpauschale gebucht ist.');
 $GLOBALS['TL_LANG']['tl_member']['xt_club_license_bdr_license']      = array('BDR-Lizenz', 'Geben Sie an, ob das Mitglied eine BDR-Lizenz hat.');
