@@ -47,6 +47,11 @@ if (strpos($GLOBALS['TL_DCA']['tl_member']['palettes']['default'], 'language;') 
 	$GLOBALS['TL_DCA']['tl_member']['palettes']['default'] = str_replace('language;', 'language;' . $clubPalette, $GLOBALS['TL_DCA']['tl_member']['palettes']['default']);
 }
 
+// Extend listing
+$GLOBALS['TL_DCA']['tl_member']['list']['label']['fields'][] = 'currentLogin';
+$GLOBALS['TL_DCA']['tl_member']['list']['label']['fields'][] = 'xt_club_membernumber';
+
+// new fields
 $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_member'] = array
 (
 	'label'                   => &$GLOBALS['TL_LANG']['tl_member']['xt_club_member'],
