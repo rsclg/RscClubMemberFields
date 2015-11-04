@@ -28,9 +28,11 @@
  * @filesource
  */
 
+$GLOBALS['TL_DCA']['tl_member']['config']['onload_callback'][] = array('RscClubMemberFields', 'addDateAddedFieldToPallete');
+
 $GLOBALS['TL_DCA']['tl_member']['palettes']['__selector__'][] = 'xt_club_member';
 
-$GLOBALS['TL_DCA']['tl_member']['subpalettes']['xt_club_member'] = "xt_club_membernumber,xt_club_function,xt_club_swimflat";
+$GLOBALS['TL_DCA']['tl_member']['subpalettes']['xt_club_member'] = "xt_club_membernumber,xt_club_swimflat";
 
 $clubPalette = "{club_legend},xt_club_member;"
 						 . "{club_license_legend},xt_club_license_bdr_license,xt_club_license_bdr_license_nr,"
@@ -62,18 +64,9 @@ $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_membernumber'] = array
 	'exclude'                 => true,
 	'search'                  => true,
 	'inputType'               => 'text',
-	'eval'                    => array('feEditable' => false, 'feViewable' => false, 'feGroup' => 'club', 'tl_class' => 'w50', 'mandatory' => true, 'rgxp' => 'digit', 'unique' => true, 'alwaysSave' => true),
+	'eval'                    => array('feEditable' => false, 'feViewable' => false, 'feGroup' => 'club', 'tl_class' => 'clr w50', 'mandatory' => true, 'rgxp' => 'digit', 'unique' => true, 'alwaysSave' => true),
 	'load_callback'           => array(array('RscClubMemberFields', 'getMemberNumber')),
 	'sql'                     => "int(10) unsigned NOT NULL default '0'"
-);
-$GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_function'] = array
-(
-	'label'                   => &$GLOBALS['TL_LANG']['tl_member']['xt_club_function'],
-	'exclude'                 => true,
-	'search'                  => true,
-	'inputType'               => 'text',
-	'eval'                    => array('feEditable' => false, 'feViewable' => true, 'feGroup' => 'club', 'tl_class' => 'clr long', 'maxlength' => 255),
-	'sql'                     => "varchar(255) NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_swimflat'] = array
 (
@@ -242,6 +235,12 @@ $GLOBALS['TL_DCA']['tl_member']['fields']['state']['sorting'] = false;
 $GLOBALS['TL_DCA']['tl_member']['fields']['stop']['sorting'] = true;
 $GLOBALS['TL_DCA']['tl_member']['fields']['stop']['flag'] = 6;
 
+// Display dateAdded
+$GLOBALS['TL_DCA']['tl_member']['fields']['dateAdded']['inputType'] = 'text';
+$GLOBALS['TL_DCA']['tl_member']['fields']['dateAdded']['exclude'] = true;
+$GLOBALS['TL_DCA']['tl_member']['fields']['dateAdded']['eval']['datepicker'] = $this->getDatePickerString();
+$GLOBALS['TL_DCA']['tl_member']['fields']['dateAdded']['eval']['tl_class'] = 'w50 wizard';
+
 /**
  * Class RscClubMemberFields
  *
@@ -257,7 +256,6 @@ class RscClubMemberFields extends tl_member
 	 */
 	public function __construct() {
 		parent::__construct();
-		$this->import('Database');
 	}
 
 	/**
@@ -272,6 +270,28 @@ class RscClubMemberFields extends tl_member
 		$lastMemberNumber = $this->Database->prepare("SELECT max(xt_club_membernumber) as max FROM tl_member")->execute()->next()->max;
 		
 		return $lastMemberNumber + 1;
+	}
+	
+		/**
+	 * Add the dateAdded field if the member is not new
+	 * @param object
+	 * @return string
+	 */
+	public function addDateAddedFieldToPallete(DataContainer $dc)
+	{
+		// Return if there is no active record (override all)
+		if ($dc->id == 0 || \Input::get('act') != 'edit')
+		{
+			return;
+		}
+		
+		$objMember = $this->Database->prepare("SELECT dateAdded FROM tl_member WHERE id=?")
+																->execute($dc->id);
+		
+		if ($objMember->numRows && $objMember->dateAdded > 0)
+		{
+			$GLOBALS['TL_DCA']['tl_member']['subpalettes']['xt_club_member'] = str_replace('xt_club_membernumber','xt_club_membernumber,dateAdded', $GLOBALS['TL_DCA']['tl_member']['subpalettes']['xt_club_member']);
+		}
 	}
 }
 
