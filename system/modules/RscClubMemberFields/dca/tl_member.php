@@ -215,6 +215,9 @@ foreach ($mandatoryFields as $fieldName) {
 	$GLOBALS['TL_DCA']['tl_member']['fields'][$fieldName]['eval']['mandatory'] = true;
 }
 
+// E-Mail nicht unique (d.h. dopplete E-Mail Adressen erlauben)
+$GLOBALS['TL_DCA']['tl_member']['fields']['email']['eval']['unique'] = false;
+
 // Anpassung Filter
 $GLOBALS['TL_DCA']['tl_member']['fields']['gender']['filter'] = true;
 $GLOBALS['TL_DCA']['tl_member']['fields']['start']['filter'] = true;
