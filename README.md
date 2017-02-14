@@ -20,6 +20,15 @@ Install the extension via composer: [rsclg/club-member-fields](https://packagist
 
 If you prefer to install it manually, download the latest release here: https://github.com/rsclg/RscClubMemberFields/releases
 
+### Database modification
+
+Execute the following database script to define some views:
+
+```
+-- add view that are expected from contao
+CREATE OR REPLACE VIEW v_tl_member AS SELECT tl_member.*, (SELECT GROUP_CONCAT(mg.name ORDER BY mg.name SEPARATOR ', ') FROM tl_member_group mg JOIN tl_member_to_group m2g ON mg.id = m2g.group_id WHERE m2g.member_id = tl_member.id) as member_groups FROM tl_member;CREATE OR REPLACE VIEW rcb2cto_users (id, name, tstamp) AS SELECT user_id, username, created FROM rcb_users;
+```
+
 
 Tracker
 -------
