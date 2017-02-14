@@ -38,7 +38,7 @@ $clubPalette = "{club_legend},xt_club_member;"
 						 . "{club_license_legend},xt_club_license_bdr_license,xt_club_license_bdr_license_nr,"
 						 . "xt_club_license_dtu_startpass,xt_club_license_dtu_startpass_nr,"
 						 . "xt_club_license_rtf_card,xt_club_license_rtf_card_nr;"
-						 . "{club_social_legend},xt_club_social_twitter,xt_club_social_facebook;"
+						 . "{club_social_legend},website,xt_club_social_twitter,xt_club_social_facebook;"
 						 . "{club_sporting_legend},xt_club_sporting_success,xt_club_sporting_goals,xt_club_sporting_motivation;,";
 
 if (strpos($GLOBALS['TL_DCA']['tl_member']['palettes']['default'], 'language;') === false) {
@@ -50,6 +50,9 @@ if (strpos($GLOBALS['TL_DCA']['tl_member']['palettes']['default'], 'language;') 
 // Extend listing
 $GLOBALS['TL_DCA']['tl_member']['list']['label']['fields'][] = 'currentLogin';
 $GLOBALS['TL_DCA']['tl_member']['list']['label']['fields'][] = 'xt_club_membernumber';
+
+// modify "website"
+$GLOBALS['TL_DCA']['tl_member']['fields']['website']['eval']['feGroup'] = 'club_social';
 
 // new fields
 $GLOBALS['TL_DCA']['tl_member']['fields']['xt_club_member'] = array
