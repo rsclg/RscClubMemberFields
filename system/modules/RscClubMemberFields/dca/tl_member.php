@@ -288,10 +288,10 @@ class RscClubMemberFields extends tl_member
 	 * @param object
 	 * @return string
 	 */
-	public function addDateAddedFieldToPallete(DataContainer $dc)
+	public function addDateAddedFieldToPallete(DataContainer $dc = null)
 	{
 		// Return if there is no active record (override all)
-		if ($dc->id == 0 || \Input::get('act') != 'edit')
+		if ($dc == null || $dc->id == 0 || \Input::get('act') != 'edit')
 		{
 			return;
 		}
